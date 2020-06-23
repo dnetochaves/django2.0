@@ -22,3 +22,7 @@
     Subindo o servidor de produção: python manage.py runserver
 
     Rodando as migrações: python manage.py makemigrations / python manage.py migrate
+
+    Criando uma App: djangp-admin startapp nomeapp
+
+    Criando super usuário: pytgon manage.py createsuperuser
