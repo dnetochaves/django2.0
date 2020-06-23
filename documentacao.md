@@ -26,3 +26,10 @@
     Criando uma App: djangp-admin startapp nomeapp
 
     Criando super usuário: pytgon manage.py createsuperuser
+
+##### Nova App 
+	django-admin startapp name
+
+##### Configurar a app no arquivo settings em INSTALED_APPS
+
+##### Configurar as urls de acordo com seu projeto
