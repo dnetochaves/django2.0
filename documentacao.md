@@ -17,4 +17,8 @@
 
     Instalação do Django: pip install django
 
-    Criando projeto django: django-admin startproject nome_do_projeto
+    Criando projeto django: django-admin startproject nome_do_projeto .
+
+    Subindo o servidor de produção: python manage.py runserver
+
+    Rodando as migrações: python manage.py makemigrations / python manage.py migrate
