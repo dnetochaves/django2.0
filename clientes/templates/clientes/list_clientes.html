@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  Clientes
+{% endblock title %}
+
+{% block content %}
+   
+    <table>
+      <thead>
+        <tr>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>age</th>
+            <th>salary</th>
+            <th>bio</th>
+            <th>photo</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for person in persons  %}
+        <tr>
+          <td>{{ person.first_name }}</td>
+          <td>{{ person.last_name }}</td>
+          <td>{{ person.age }}</td>
+          <td>{{ person.salary }}</td>
+          <td>{{ person.bio }}</td>
+          <td> <a href="{{ person.photo}}" class="collection-item purple lighten-3">{{ person.photo }}</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+   
+{% endblock %}
