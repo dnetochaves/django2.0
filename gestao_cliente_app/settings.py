@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     #myapps
     'core',
     'clientes',
+    'accounts',
 ]
 
 MIDDLEWARE = [
