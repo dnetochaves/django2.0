@@ -1,5 +1,21 @@
-<ul class="collection with-header">
-  <li class="collection-header"><h4><i class="Medium material-icons">menu</i></h4></li>
-  <li class="collection-item"><a href="{% url 'new' %}">Novo</a></li>
-  <li class="collection-item"><a href="{% url 'list_clientes' %}">Lista</a></li>
+<ul class="collapsible">
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">filter_drama</i>
+      Clientes
+      <span class="new badge">4</span></div>
+    <div class="collapsible-body">
+      <p>
+        <p><a href="{% url 'new' %}">Novo</a></p>
+        <p><a href="{% url 'list_clientes' %}">Lista</a></p>
+    
+    </div>
+  </li>
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">place</i>
+      Second
+      <span class="badge">1</span></div>
+    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+  </li>
 </ul>

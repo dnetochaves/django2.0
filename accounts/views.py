@@ -5,9 +5,15 @@ from django.views.generic.edit import CreateView
 from django.urls import reverse, reverse_lazy
 
 # Create your views here.
+
+def perfil(request):
+    return render(request, 'accounts/perfil.html')
+
+
 def new_user(request):
     form = User(request.POST, request.FILES, None)
     return render(request, 'accounts/user_form.html', {'form': form})
+
 
 
 class CreateUser(CreateView):

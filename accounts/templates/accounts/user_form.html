@@ -5,6 +5,12 @@
   New
 {% endblock title %}
 
+{% block navigation %}
+    <div class="col s12 m4 l3"> 
+        {% include 'navigation.html' %}
+    </div>
+    {% endblock %}
+
 {% block content %}
    
     <form action="{% url 'new_user' %}" method="post"  enctype="multipart/form-data">
