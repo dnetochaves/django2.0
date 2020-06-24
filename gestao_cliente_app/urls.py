@@ -18,9 +18,10 @@ from django.urls import path, include
 from core import urls as core_urls
 from clientes import urls as clientes_urls
 from accounts import urls as accounts_urls
-from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import LoginView, LogoutView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include(core_urls)),
@@ -30,4 +31,4 @@ urlpatterns = [
     path('login/', LoginView.as_view(), name="login"),
     path("logout/", LogoutView.as_view(), name="logout"),
     
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -11,7 +11,7 @@ def list_clientes(request):
 
 @login_required
 def new(request):
-    form = PersonForm(request.POST or request.FILES or None)
+    form = PersonForm(request.POST or None, request.FILES or None)
 
     if form.is_valid():
         form.save()
@@ -22,7 +22,7 @@ def new(request):
 @login_required
 def update(request, id):
     person = get_object_or_404(Person, pk=id)
-    form = PersonForm(request.POST or request.FILES or None, instance=person) 
+    form = PersonForm(request.POST or None, request.FILES or None, instance=person)
 
     if form.is_valid():
         form.save()

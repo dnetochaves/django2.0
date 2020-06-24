@@ -13,14 +13,12 @@
 
 {% block content %}
    
-    <form method="post" enctype="multipart/form-data">
+    <form  method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <button class="btn waves-effect blue" type="submit" name="action">Salvar
             <i class="material-icons right">send</i>
         </button>
-      
-
     </form>
 
    
