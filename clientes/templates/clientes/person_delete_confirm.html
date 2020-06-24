@@ -6,16 +6,12 @@
 {% endblock title %}
 
 {% block content %}
-   
-    <form method="post" enctype="multipart/form-data">
+<p class="flow-text">Tem certeza que desela excluir {{ person.first_name}}</p>
+   <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn waves-effect blue" type="submit" name="action">Salvar
+        <button class="btn waves-effect red" type="submit" name="action">Excluir
             <i class="material-icons right">send</i>
         </button>
-      
 
     </form>
-
-   
 {% endblock %}
