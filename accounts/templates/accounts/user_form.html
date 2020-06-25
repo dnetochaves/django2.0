@@ -5,14 +5,10 @@
   New
 {% endblock title %}
 
-{% block navigation %}
-    <div class="col s12 m4 l3"> 
-        {% include 'navigation.html' %}
-    </div>
-    {% endblock %}
+
 
 {% block content %}
-   
+   <div class="container">
     <form action="{% url 'new_user' %}" method="post"  enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
@@ -21,6 +17,6 @@
         </button>
 
     </form>
-
+</div>
    
 {% endblock %}
