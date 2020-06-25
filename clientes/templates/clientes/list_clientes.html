@@ -12,8 +12,9 @@
     {% endblock %}
 
 {% block content %}
-
-    <ul class="collection">
+<div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+  
+  <ul class="collection">
     {% for person in persons  %}
       <li class="collection-item avatar">
         <img src="/media/{{ person.photo}}" alt="" class="circle">
@@ -25,5 +26,9 @@
       </li>
       {% endfor %}
     </ul>
+   
+    
+</div>
+  
    
 {% endblock %}

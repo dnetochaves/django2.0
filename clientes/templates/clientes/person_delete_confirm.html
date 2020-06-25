@@ -12,12 +12,16 @@
     {% endblock %}
 
 {% block content %}
-<p class="flow-text">Tem certeza que desela excluir {{ person.first_name}}</p>
-   <form method="POST" enctype="multipart/form-data">
+
+    <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+
+        <p class="flow-text">Tem certeza que desela excluir {{ person.first_name}}</p>
+       <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <button class="btn waves-effect red" type="submit" name="action">Excluir
             <i class="material-icons right">send</i>
         </button>
-
-    </form>
+       </form> 
+       
+    </div>
 {% endblock %}

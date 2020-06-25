@@ -12,7 +12,8 @@
     {% endblock %}
 
 {% block content %}
-   
+<div class="col s12 m8 l9"> 
+
     <form  method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
@@ -20,6 +21,9 @@
             <i class="material-icons right">send</i>
         </button>
     </form>
+    
+</div>
+    
 
    
 {% endblock %}
