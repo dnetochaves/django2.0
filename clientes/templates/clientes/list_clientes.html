@@ -17,7 +17,7 @@
   <ul class="collection">
     {% for person in persons  %}
       <li class="collection-item avatar">
-        <img src="/media/{{ person.photo}}" alt="" class="circle">
+        <img src="https://django2-0.s3.amazonaws.com/static/{{ person.photo }}" alt="" class="circle">
         <span class="title">{{ person.first_name }}</span>
         <p>{{ person.last_name }} <br>
           {{ person.age }} | <a href="{% url 'delete' person.id %}" class="waves-light btn">Excluir</a>
