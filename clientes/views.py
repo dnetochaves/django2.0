@@ -6,8 +6,17 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required
 def list_clientes(request):
-    persons = Person.objects.all()
-    return render(request, 'clientes/list_clientes.html', {'persons': persons})
+    nome = request.GET.get('nome', None)
+    sobrenome = request.GET.get('sobrenome', None)
+    if nome:
+        persons = Person.objects.filter(first_name__icontains=nome) | Person.objects.filter(last_name__icontains=sobrenome)
+        return render(request, 'clientes/list_clientes.html', {'persons': persons})
+    else:
+         persons = Person.objects.all()
+         return render(request, 'clientes/list_clientes.html', {'persons': persons})
+   
+
+    
 
 @login_required
 def new(request):
