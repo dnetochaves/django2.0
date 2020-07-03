@@ -33,7 +33,9 @@
   <ul class="collection">
     {% for person in persons  %}
       <li class="collection-item avatar">
-        <img src="{{ person.photo.url }}" alt="" class="circle">
+        {% if person.photo %}
+            <img src="{{ person.photo.url }}" alt="" class="circle">
+        {% endif %}
         <span class="title">{{ person.first_name }}</span>
         <p>{{ person.last_name }} <br>
           {{ person.age }} | <a href="{% url 'delete' person.id %}" class="waves-light btn">Excluir</a>

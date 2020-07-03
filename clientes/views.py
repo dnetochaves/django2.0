@@ -5,9 +5,9 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse, reverse_lazy
-    
+
 # Create your views here.
 #CBV
 class PersonList(ListView):
@@ -20,6 +20,20 @@ class PersonCreate(CreateView):
     model = Person
     fields = ['first_name', 'last_name','age', 'salary', 'bio', 'photo', 'doc']
     success_url = reverse_lazy('person_list')
+
+
+class PersonUpdate(UpdateView):
+    model = Person
+    fields = ['first_name', 'last_name','age', 'salary', 'bio', 'photo', 'doc']
+    success_url = reverse_lazy('person_list')
+
+class PersonDelete(DeleteView):
+    model = Person
+    #return = reverse_lazy('person_list')
+
+    def get_success_url(self):
+        return reverse_lazy('person_list')
+
 
 
 #FBV
@@ -55,7 +69,7 @@ def update(request, id):
     if form.is_valid():
         form.save()
         return redirect('list_clientes')
-    return render(request, 'clientes/person_form.html', {'form': form})
+    return render(request, 'clientes/person_form_fbv.html', {'form': form})
 
 @login_required
 def delete(request, id):

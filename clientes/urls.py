@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import list_clientes, new, update, delete
-from .views import PersonList, PersonDetailView, PersonCreate
+from .views import PersonList, PersonDetailView, PersonCreate, PersonUpdate, PersonDelete
 
 urlpatterns = [
 
@@ -14,4 +14,6 @@ urlpatterns = [
    path('person_list', PersonList.as_view(), name="person_list"),
    path('person_detail/<int:pk>/', PersonDetailView.as_view(), name='person-detail'),
    path('person-create', PersonCreate.as_view(), name="person_create"),
+   path('person-update/<int:pk>/', PersonUpdate.as_view(), name='person-update'),
+   path('person-delete/<int:pk>/', PersonDelete.as_view(), name='person-delete'),
 ]
