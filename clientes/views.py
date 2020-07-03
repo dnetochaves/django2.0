@@ -2,8 +2,27 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Person
 from .forms import PersonForm
 from django.contrib.auth.decorators import login_required
-
+from django.views.generic.base import TemplateView
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
+from django.urls import reverse, reverse_lazy
+    
 # Create your views here.
+#CBV
+class PersonList(ListView):
+    model = Person          
+
+class PersonDetailView(DetailView):
+    model = Person
+
+class PersonCreate(CreateView):
+    model = Person
+    fields = ['first_name', 'last_name','age', 'salary', 'bio', 'photo', 'doc']
+    success_url = reverse_lazy('person_list')
+
+
+#FBV
 @login_required
 def list_clientes(request):
     nome = request.GET.get('nome', None)
@@ -25,7 +44,7 @@ def new(request):
     if form.is_valid():
         form.save()
         return redirect('list_clientes')
-    return render(request, 'clientes/person_form.html', {'form': form})
+    return render(request, 'clientes/person_form_fbv.html', {'form': form})
 
 
 @login_required

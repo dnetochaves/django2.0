@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  New
+{% endblock title %}
+
+{% block navigation %}
+    <div class="col s12 m4 l3"> 
+        {% include 'navigation.html' %}
+    </div>
+    {% endblock %}
+
+{% block content %}
+<div class="col s12 m8 l9"> 
+
+    <form  method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn waves-effect blue" type="submit" name="action">Salvar
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+    
+</div>
+    
+
+   
+{% endblock %}
