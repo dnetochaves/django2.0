@@ -1,14 +1,26 @@
 <ul class="collapsible">
   <li>
     <div class="collapsible-header">
-      <i class="material-icons">filter_drama</i>
-      Clientes
-      <span class="new badge">4</span></div>
+      <i class="material-icons">menu </i>
+      FBV Menu
+    </div>
     <div class="collapsible-body">
       <p>
-        <p><a href="{% url 'new' %}">Novo</a></p>
-        <p><a href="{% url 'list_clientes' %}">Lista</a></p>
-    
+      <p><a href="{% url 'new' %}">Novo</a></p>
+      <p><a href="{% url 'list_clientes' %}">Lista</a></p>
+
+    </div>
+  </li>
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">menu </i>
+      CBV Menu
+    </div>
+    <div class="collapsible-body">
+      <p>
+      <p><a href="{% url 'person-create' %}">Novo</a></p>
+      <p><a href="{% url 'person-list' %}">Lista</a></p>
+
     </div>
   </li>
   <li>
@@ -16,6 +28,8 @@
       <i class="material-icons">place</i>
       Second
       <span class="badge">1</span></div>
-    <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    <div class="collapsible-body">
+      <p>Lorem ipsum dolor sit amet.</p>
+    </div>
   </li>
 </ul>

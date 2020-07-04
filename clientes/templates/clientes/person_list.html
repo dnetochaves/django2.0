@@ -1,6 +1,17 @@
-<h1>Peson List A</h1>
+{% extends 'base.html' %}
+{% load static %}
 
+{% block title %}
+  New
+{% endblock title %}
 
+{% block navigation %}
+    <div class="col s12 m4 l3"> 
+        {% include 'navigation.html' %}
+    </div>
+    {% endblock %}
+
+{% block content %}
 <ul>
     {% for person in object_list %}
         <li><a href="{% url 'person-detail' person.id %}">{{ person.first_name }}</a> | <a href="{% url 'person-update' person.id %}">atualizar</a>| <a href="{% url 'person-delete' person.id %}">deletar</a></li>
@@ -9,3 +20,8 @@
         <li>No articles yet.</li>
     {% endfor %}
 </ul>
+
+    
+
+   
+{% endblock %}
