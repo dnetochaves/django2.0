@@ -2,26 +2,29 @@
 {% load static %}
 
 {% block title %}
-  New
+New
 {% endblock title %}
 
 {% block navigation %}
-    <div class="col s12 m4 l3"> 
-        {% include 'navigation.html' %}
-    </div>
-    {% endblock %}
+<div class="col s12 m4 l3">
+    {% include 'navigation.html' %}
+</div>
+{% endblock %}
 
 {% block content %}
-<ul>
+<ul class="collection">
     {% for person in object_list %}
-        <li><a href="{% url 'person-detail' person.id %}">{{ person.first_name }}</a> | <a href="{% url 'person-update' person.id %}">atualizar</a>| <a href="{% url 'person-delete' person.id %}">deletar</a></li>
-        <li></li></li>
-    {% empty %}
-        <li>No articles yet.</li>
+    <li class="collection-item avatar">
+        <img src="{{ person.photo.url }}" alt="" class="circle">
+        <span class="title">{{ person.first_name }}</span>
+        <p>{{ person.last_name }}<br>
+            {{ person.age }}
+        </p>
+        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
     {% endfor %}
 </ul>
 
-    
 
-   
+
 {% endblock %}
