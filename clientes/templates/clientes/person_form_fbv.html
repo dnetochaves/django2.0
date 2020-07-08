@@ -2,28 +2,33 @@
 {% load static %}
 
 {% block title %}
-  New
+New
 {% endblock title %}
 
-{% block navigation %}
-    <div class="col s12 m4 l3"> 
-        {% include 'navigation.html' %}
-    </div>
-    {% endblock %}
 
 {% block content %}
-<div class="col s12 m8 l9"> 
 
-    <form  method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn waves-effect blue" type="submit" name="action">Salvar
-            <i class="material-icons right">send</i>
-        </button>
-    </form>
-    
+<div class="row">
+
+    <div class="col s3">
+        <!-- Grey navigation panel -->
+        {% include 'navigation.html' %}
+    </div>
+
+    <div class="col s9">
+        <!-- Teal page content  -->
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn waves-effect blue" type="submit" name="action">Salvar
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+
 </div>
-    
 
-   
+
+
+
 {% endblock %}

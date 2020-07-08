@@ -2,39 +2,24 @@
 {% load static %}
 
 {% block title %}
-  Clientes
+Clientes
 {% endblock title %}
 
-{% block navigation %}
-    <div class="col s12 m4 l3"> 
-        {% include 'navigation.html' %}
-    </div>
-    {% endblock %}
-
 {% block content %}
-<div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
-  <div class="row">
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s5">
-          <input placeholder="Nome" id="nome" name="nome" type="text" class="validate">
-        </div>
-        <div class="input-field col s5">
-          <input placeholder="Sobrenome" id="sobrenome" name="sobrenome" type="text" class="validate">
-        </div>
-        <div class="input-field col s2">
-          <button class="btn waves-effect blue" type="submit" name="action">
-            <i class="material-icons right">search</i>
-          </button>
-        </div>
-      </div>
-    </form>
+<div class="row">
+
+  <div class="col s3">
+    <!-- Grey navigation panel -->
+      {% include 'navigation.html' %}
   </div>
-  <ul class="collection">
-    {% for person in persons  %}
+
+  <div class="col s9">
+    <!-- Teal page content  -->
+    <ul class="collection">
+      {% for person in persons  %}
       <li class="collection-item avatar">
         {% if person.photo %}
-            <img src="{{ person.photo.url }}" alt="" class="circle">
+        <img src="{{ person.photo.url }}" alt="" class="circle">
         {% endif %}
         <span class="title">{{ person.first_name }}</span>
         <p>{{ person.last_name }} <br>
@@ -44,9 +29,10 @@
       </li>
       {% endfor %}
     </ul>
-   
-    
+  </div>
+
 </div>
-  
-   
+<div class="container">
+
+</div>
 {% endblock %}
