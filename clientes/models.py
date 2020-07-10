@@ -14,7 +14,7 @@ class Person(models.Model):
     salary = models.DecimalField(max_digits=5, decimal_places=2, null=True, blank=True)
     bio = models.TextField(null=True, blank=True)
     photo = models.ImageField(upload_to='clients_photos', null=True, blank=True)
-    doc = models.OneToOneField(Document, null=True, blank=True, on_delete=models.CASCADE)
+    doc = models.ForeignKey(Document, null=True, blank=True, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.first_name

@@ -19,20 +19,20 @@ class PersonDetailView(DetailView):
 class PersonCreate(CreateView):
     model = Person
     fields = ['first_name', 'last_name','age', 'salary', 'bio', 'photo', 'doc']
-    success_url = reverse_lazy('person_list')
+    success_url = reverse_lazy('person-list')
 
 
 class PersonUpdate(UpdateView):
     model = Person
     fields = ['first_name', 'last_name','age', 'salary', 'bio', 'photo', 'doc']
-    success_url = reverse_lazy('person_list')
+    success_url = reverse_lazy('person-list')
 
 class PersonDelete(DeleteView):
     model = Person
     #return = reverse_lazy('person_list')
 
     def get_success_url(self):
-        return reverse_lazy('person_list')
+        return reverse_lazy('person-list')
 
 
 
@@ -58,7 +58,10 @@ def new(request):
     if form.is_valid():
         form.save()
         return redirect('list_clientes')
-    return render(request, 'clientes/person_form_fbv.html', {'form': form})
+    return render(request, 'clientes/person_form_FBV2.html', {'form': form})
+
+
+
 
 
 @login_required
